@@ -12,11 +12,20 @@
   </head>
 
   <body ng-controller="ListController as items">
-    <input type="text" ng-model="newItem"></input>
+    <input type="text" ng-model="newItem">
     <button ng-click="items.addItems(newItem)">Add item</button>
-    <ul ng-repeat="item in items.itemList.items">
-      <li>{{item}}</li>
+    <ul ng-repeat="item in items.itemList.items | filter: items.selectedFilter.filerExp">
+      <li>{{item.task}}</li>
       <button ng-click="items.removeItem(item)">x</button>
+      <input type="checkbox" ng-click="items.toggleCompleted(item)" ng-if="item.completed" checked>
+      <input type="checkbox" ng-click="items.toggleCompleted(item)" ng-if="!item.completed">
     </ul>
+
+    <ul>
+        <li ng-repeat="filter in items.filters">
+            <button ng-click="items.setFilter(filter)">{{filter.name}}</button>
+        </li>
+    </ul>
+
   </body>
 </html>
