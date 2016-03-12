@@ -11,12 +11,11 @@ toDoList.controller('ListController', ['$resource', function($resource) {
 
   this.filters = [
     {name: 'Active', filterExp: {completed: false}},
-    {name: 'Completed', filerExp: {completed: true}}
+    {name: 'Completed', filterExp: {completed: true}}
   ];
 
   this.setFilter = function(filter) {
     self.selectedFilter = filter;
-    console.log(filter);
   };
 
   this.addItems = function(task) {
