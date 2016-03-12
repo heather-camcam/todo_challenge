@@ -12,12 +12,11 @@
   </head>
 
   <body ng-controller="ListController as items">
-    <button ng-click="items.getItems()"></button>
-    {{items}}
     <input type="text" ng-model="newItem"></input>
     <button ng-click="items.addItems(newItem)">Add item</button>
     <ul ng-repeat="item in items.itemList.items">
       <li>{{item}}</li>
+      <button ng-click="items.removeItem(item)">x</button>
     </ul>
   </body>
 </html>
