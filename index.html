@@ -13,7 +13,7 @@
 
   <body ng-controller="ListController as items">
     <input type="text" ng-model="newItem">
-    <button ng-click="items.addItems(newItem)">Add item</button>
+    <button class="btn" ng-click="items.addItems(newItem)">Add item</button>
     <ul ng-repeat="item in items.itemList.items | filter: items.selectedFilter.filterExp">
       <li>{{item.task}}</li>
       <button ng-click="items.removeItem(item)">x</button>

@@ -2,9 +2,7 @@ toDoList.controller('ListController', ['$resource', function($resource) {
 
   var self = this;
   this.itemList = { "items": [
-                      {'task': 'go for a run fat bitch', 'completed': false},
-                      {'task': 'sign contract', 'completed': true},
-                      {'task': 'dry clean coat', 'completed': true}
+                  
                     ]
                   };
 
